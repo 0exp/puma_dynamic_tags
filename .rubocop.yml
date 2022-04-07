@@ -1,0 +1,20 @@
+inherit_gem:
+  armitage-rubocop:
+    - lib/rubocop.general.yml
+    - lib/rubocop.rake.yml
+    - lib/rubocop.rspec.yml
+
+AllCops:
+  TargetRubyVersion: 3.1.0
+  NewCops: enable
+  Include:
+    - lib/**/*.rb
+    - spec/**/*.rb
+    - Gemfile
+    - Rakefile
+    - puma_dynamic_tags.gemspec
+    - bin/console
+
+# NOTE: for better representativeness of test examples
+RSpec/DescribedClass:
+  Enabled: false
