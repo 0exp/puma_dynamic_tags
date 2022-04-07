@@ -13,10 +13,10 @@ Gem::Specification.new do |spec|
   spec.license  = 'MIT'
 
   spec.summary = <<~GEM_SUMMARY
-    puma_dynamic_tags - allows you to use a dynamic tag option calculated by a proc.
+    puma_dynamic_tags - allows to use a dynamic tag puma's option calculated by a proc.
   GEM_SUMMARY
   spec.description = <<~GEM_DESCRIPTION
-    puma_dynamic_tags - allows to use a dynamic tag option calculated by proc.
+    puma_dynamic_tags - allows to use a dynamic tag puma's option calculated by a proc.
   GEM_DESCRIPTION
 
   spec.metadata['homepage_uri']    = spec.homepage
