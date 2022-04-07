@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 2.6.0'
 
   spec.name     = 'puma_dynamic_tags'
-  spec.version  = '0.1.0'
+  spec.version  = '0.1.1'
   spec.authors  = ['Rustam Ibragimov']
   spec.email    = ['exfivedaiver@gmail.com']
   spec.homepage = 'https://github.com/0exp/puma_dynamic_tags'
