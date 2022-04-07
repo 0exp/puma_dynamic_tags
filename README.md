@@ -6,9 +6,15 @@
 gem install puma_dynamic_tags
 ```
 
+or:
+
 ```ruby
 # Gemfile
 gem "puma_dynamic_tags"
+```
+
+```shell
+bundle install
 ```
 
 ## Usage
