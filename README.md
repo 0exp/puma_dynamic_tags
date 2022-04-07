@@ -20,17 +20,24 @@ bundle install
 ## Usage
 
 ```ruby
-# in your gem requirements
-require "puma_dynamic_tags"
-```
-
-```ruby
 # config/puma.rb
-plugin :puma_dynamic_tags
+plugin "puma_dynamic_tags"
 
 tag do
-  # your dynamic code
+  "some_dynamic_result" # your dynamic code
 end
+```
+
+and then:
+
+```shell
+puma
+```
+
+and then:
+
+```shell
+pas aux | grep puma
 ```
 
 ## Contributing

@@ -10,6 +10,12 @@ module Puma::Plugin::DuynamicTags
       tag_option
     end
   end
+
+  module DSLTagExtension
+    def tag(string = nil, &block)
+      @options[:tag] = block_given? ? block : string.to_s
+    end
+  end
 end
 
 Puma::Launcher.prepend(Module.new do
@@ -21,3 +27,5 @@ Puma::Launcher.prepend(Module.new do
     @options
   end
 end)
+
+Puma::DSL.prepend(Puma::Plugin::DuynamicTags::DSLTagExtension)
