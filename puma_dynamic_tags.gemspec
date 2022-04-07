@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
+require_relative 'lib/puma/plugin/dynamic_tags/version'
+
 Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 2.6.0'
 
   spec.name     = 'puma_dynamic_tags'
-  spec.version  = '0.1.2'
+  spec.version  = Puma::Plugin::DuynamicTags::VERSION
   spec.authors  = ['Rustam Ibragimov']
   spec.email    = ['exfivedaiver@gmail.com']
   spec.homepage = 'https://github.com/0exp/puma_dynamic_tags'
