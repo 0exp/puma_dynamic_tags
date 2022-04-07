@@ -6,7 +6,7 @@ module Puma::Plugin::DuynamicTags
       return super unless key == :tag
 
       tag_option = super
-      tag_option = tag_opt.call.to_s if tag_opt.is_a?(::Proc)
+      tag_option = tag_option.call.to_s if tag_option.is_a?(::Proc)
       tag_option
     end
   end
