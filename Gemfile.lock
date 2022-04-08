@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    puma_dynamic_tags (0.1.2)
+    puma_dynamic_tags (0.2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -87,7 +87,7 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
-  armitage-rubocop (>= 1.26.1.1)
+  armitage-rubocop (~> 1.26)
   bundler (~> 2.3)
   pry (~> 0.14)
   puma_dynamic_tags!
