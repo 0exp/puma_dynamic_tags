@@ -2,6 +2,8 @@
 
 Puma plugin that allows you to define dynamically calculated `tag` option inside your `puma`'s config (by `proc` object).
 
+(Note: `tag` option is used to define a customized process title for your puma's workers)
+
 ## Installation
 
 ```shell
