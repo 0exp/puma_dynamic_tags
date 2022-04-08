@@ -28,7 +28,7 @@ Setup your puma application:
 ```ruby
 # config.ru
 
-# (example)
+# (Sinatra example)
 require "sinatra"
 run Sinatra::Application
 ```
