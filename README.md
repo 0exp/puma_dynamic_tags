@@ -19,9 +19,23 @@ bundle install
 
 ## Usage
 
+Setup your puma application:
+
+```ruby
+# config.ru
+
+# (example)
+require "sinatra"
+run Sinatra::Application
+```
+
+Enable `dynamic_tags` plugin and configure dynamic `tag` option:
+
 ```ruby
 # config/puma.rb
-plugin "puma_dynamic_tags"
+plugin "dynamic_tags"
+
+# and now you can use dynamic tags:
 
 tag do
   "some_dynamic_result: #{Time.now}" # your dynamic code
@@ -47,13 +61,13 @@ puma: cluster worker 0: 38624 [some_dynamic_result: 2022-04-08 03:02:50 +0300] #
 and then (run phase-restart and check recalculated process names with your dynamic tag):
 
 ```shell
-puma 5.6.4 (tcp://0.0.0.0:9292) [some_dynamic_result: 2022-04-08 03:01:04 +0300] # <--- dynamic time has bin changed
-puma: cluster worker 2: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- dynamic time has bin changed
-puma: cluster worker 1: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- dynamic time has bin changed
-puma: cluster worker 0: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- dynamic time has bin changed
+puma 5.6.4 (tcp://0.0.0.0:9292) [some_dynamic_result: 2022-04-08 03:01:04 +0300] # <--- each tag has been recalculated
+puma: cluster worker 2: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- each tag has been recalculated
+puma: cluster worker 1: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- each tag has been recalculated
+puma: cluster worker 0: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- each tag has been recalculated
 ````
 
-Profit!
+*Profit!*
 
 ## Contributing
 
