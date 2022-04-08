@@ -24,21 +24,36 @@ bundle install
 plugin "puma_dynamic_tags"
 
 tag do
-  "some_dynamic_result" # your dynamic code
+  "some_dynamic_result: #{Time.now}" # your dynamic code
 end
 ```
 
 and then:
 
 ```shell
-puma
+# run your puma in your favorite mode
+bundle exec puma -t 8:32 -w 3
 ```
 
-and then:
+and then (check your process names):
 
 ```shell
-pas aux | grep puma
+puma 5.6.4 (tcp://0.0.0.0:9292) [some_dynamic_result: 2022-04-08 03:01:04 +0300] # <--- dynamic process name
+puma: cluster worker 2: 38624 [some_dynamic_result: 2022-04-08 03:02:50 +0300] # <--- dynamic process name
+puma: cluster worker 1: 38624 [some_dynamic_result: 2022-04-08 03:02:50 +0300] # <--- dynamic process name
+puma: cluster worker 0: 38624 [some_dynamic_result: 2022-04-08 03:02:50 +0300] # <--- dynamic process name
 ```
+
+and then (run phase-restart and check recalculated process names with your dynamic tag):
+
+```shell
+puma 5.6.4 (tcp://0.0.0.0:9292) [some_dynamic_result: 2022-04-08 03:01:04 +0300] # <--- dynamic time has bin changed
+puma: cluster worker 2: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- dynamic time has bin changed
+puma: cluster worker 1: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- dynamic time has bin changed
+puma: cluster worker 0: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- dynamic time has bin changed
+````
+
+Profit!
 
 ## Contributing
 
