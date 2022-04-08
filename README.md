@@ -53,22 +53,22 @@ and then:
 bundle exec puma -t 8:32 -w 3
 ```
 
-and then (check your process names):
+and then (check your process titles):
 
 ```shell
-puma 5.6.4 (tcp://0.0.0.0:9292) [some_dynamic_result: 2022-04-08 03:01:04 +0300] # <--- dynamic process name
-puma: cluster worker 2: 38624 [some_dynamic_result: 2022-04-08 03:02:50 +0300] # <--- dynamic process name
-puma: cluster worker 1: 38624 [some_dynamic_result: 2022-04-08 03:02:50 +0300] # <--- dynamic process name
-puma: cluster worker 0: 38624 [some_dynamic_result: 2022-04-08 03:02:50 +0300] # <--- dynamic process name
+puma 5.6.4 (tcp://0.0.0.0:9292) [some_dynamic_result: 2022-04-08 03:01:04 +0300] # <--- dynamic process title
+puma: cluster worker 2: 38624 [some_dynamic_result: 2022-04-08 03:02:50 +0300] # <--- dynamic process title
+puma: cluster worker 1: 38624 [some_dynamic_result: 2022-04-08 03:02:50 +0300] # <--- dynamic process title
+puma: cluster worker 0: 38624 [some_dynamic_result: 2022-04-08 03:02:50 +0300] # <--- dynamic process title
 ```
 
-and then (run phase-restart and check recalculated process names with your dynamic tag):
+and then (run phase-restart in order to make sure that your workers have a new titles):
 
 ```shell
-puma 5.6.4 (tcp://0.0.0.0:9292) [some_dynamic_result: 2022-04-08 03:01:04 +0300] # <--- each tag has been recalculated
-puma: cluster worker 2: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- each tag has been recalculated
-puma: cluster worker 1: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- each tag has been recalculated
-puma: cluster worker 0: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- each tag has been recalculated
+puma 5.6.4 (tcp://0.0.0.0:9292) [some_dynamic_result: 2022-04-08 03:01:04 +0300] # <--- each title has been recalculated
+puma: cluster worker 2: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- each title has been recalculated
+puma: cluster worker 1: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- each title has been recalculated
+puma: cluster worker 0: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- each title has been recalculated
 ````
 
 **Profit!**
