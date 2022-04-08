@@ -69,7 +69,7 @@ puma: cluster worker 1: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] #
 puma: cluster worker 0: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- each tag has been recalculated
 ````
 
-*Profit!*
+**Profit!**
 
 ## Contributing
 
