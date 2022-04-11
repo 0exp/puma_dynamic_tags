@@ -54,7 +54,7 @@ bundle exec puma -t 8:32 -w 3
 and then (check your process titles):
 
 ```shell
-puma 5.6.4 (tcp://0.0.0.0:9292) [some_dynamic_result: 2022-04-08 03:01:04 +0300] # (main laster process)
+puma 5.6.4 (tcp://0.0.0.0:9292) [some_dynamic_result: 2022-04-08 03:01:04 +0300] # (main claster process)
 puma: cluster worker 2: 38624 [some_dynamic_result: 2022-04-08 03:02:50 +0300] # <--- dynamic process title
 puma: cluster worker 1: 38624 [some_dynamic_result: 2022-04-08 03:02:50 +0300] # <--- dynamic process title
 puma: cluster worker 0: 38624 [some_dynamic_result: 2022-04-08 03:02:50 +0300] # <--- dynamic process title
@@ -63,7 +63,7 @@ puma: cluster worker 0: 38624 [some_dynamic_result: 2022-04-08 03:02:50 +0300] #
 and then (run phase-restart in order to make sure that your workers have a new titles):
 
 ```shell
-puma 5.6.4 (tcp://0.0.0.0:9292) [some_dynamic_result: 2022-04-08 03:01:04 +0300] # (main laster process)
+puma 5.6.4 (tcp://0.0.0.0:9292) [some_dynamic_result: 2022-04-08 03:01:04 +0300] # (main claster process)
 puma: cluster worker 2: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- each title has been recalculated
 puma: cluster worker 1: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- each title has been recalculated
 puma: cluster worker 0: 38624 [some_dynamic_result: 2022-04-08 03:03:25 +0300] # <--- each title has been recalculated
